@@ -16,7 +16,9 @@ Verdant is a custom Zsh theme for [Oh My Zsh](https://ohmyz.sh/), designed to gi
 - 🌸 **Sakura / mint color palette** for the prompt, Git branch and exit codes
 - 🍃 **A little leaf at the start of the prompt**, before your user name (it turns pink when the last command failed)
 - ↳ **Compact history**: once a command is sent, its big two-line header shrinks to a single `↳ 🍃 command` line, so your terminal stays clean
+- 🌱 **A blank line above the current prompt** to separate it from the previous output; it disappears as soon as the command is sent
 - 📁 **`ls` with icons**: every file and folder gets an icon matching its type (C, headers, Python, Makefile, images, archives, `.git`, `goinfre`…), in plain `ls`, `ls -a`, `ls -l`, `ls -la`, `ls -lah`
+- 🌳 **`tree` with icons**: the same icons in `tree`, `tree -a`, `tree -L 2`… (needs `tree` installed)
 
 ## 📸 Preview
 
@@ -32,10 +34,11 @@ Add any of these to your `~/.zshrc`, **before** the line `source $ZSH/oh-my-zsh.
 VERDANT_LEAF="🌿"               # use an emoji leaf instead of the Nerd Font one
 VERDANT_ARROW="❯"               # change the arrow used for old commands
 VERDANT_TRANSIENT_PROMPT=false  # keep the full header on every old command
-VERDANT_LS_ICONS=false          # keep the normal ls
+VERDANT_LS_ICONS=false          # keep the normal ls and tree
+VERDANT_NEWLINE=false           # no blank line above the current prompt
 ```
 
-> `ls` options other than `-a`, `-A`, `-l`, `-h` and `-1` (for example `-t`, `-R`, `-S`) fall back to the normal `ls`. When the output is piped (`ls | grep …`), the normal `ls` is used too, so scripts are never affected.
+> `ls` options other than `-a`, `-A`, `-l`, `-h` and `-1` (for example `-t`, `-R`, `-S`) fall back to the normal `ls`. When the output is piped (`ls | grep …`, `tree | less`), the normal `ls` / `tree` is used too, so scripts are never affected.
 
 ## 🚀 Installation
 
@@ -60,7 +63,7 @@ git clone git@github.com:HorusExE69/verdant-theme.git
 
 ```bash
 mkdir -p ~/.oh-my-zsh/custom/themes
-cp verdant-theme/verdant.zsh-theme ~/.oh-my-zsh/custom/themes/
+cp verdant-theme/verdant3.0.zsh-theme ~/.oh-my-zsh/custom/themes/verdant.zsh-theme
 ```
 
 ### 3. Enable Verdant
